@@ -14,9 +14,9 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: (./before_bias_removal.png) "Data Distribution - before removing bias around ZERO steering angle"
-[image2]: (./after_bias_removal.png)  "Data Distribution - after removing bias around ZERO steering angle"
-[image3]: (./master/nvidia.jpg) "Architecture"
+[image1]: before_bias_removal.png "Data Distribution - before removing bias around ZERO steering angle"
+[image2]: after_bias_removal.png  "Data Distribution - after removing bias around ZERO steering angle"
+[image3]: nvidia.jpg "Architecture"
 
 ---
 ### Files Submitted & Code Quality
@@ -157,7 +157,8 @@ The final model architecture (model.py) consisted of a convolution neural networ
 
 ![Nvidia Architecture][image3]
 
-####3. Creation of the Training Set & Training Process
+
+#### 3. Creation of the Training Set & Training Process
 
 All data collected are accumulated and following steps are done to train:
 
