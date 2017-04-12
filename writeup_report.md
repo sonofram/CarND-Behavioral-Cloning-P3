@@ -16,7 +16,7 @@ The goals / steps of this project are the following:
 
 [image1]: ./before_bias_removal.png "Histogram-before removing bias around ZERO steering angle"
 [image2]: ./after_bias_removal.png "Histogram-after removing bias around ZERO steering angle"
-[image3]: ./nvidia "Architecture"
+[image3]: ./nvidia.jpg "Architecture"
 
 ---
 ###Files Submitted & Code Quality
@@ -59,41 +59,41 @@ These functions are called in pre-processing step before training the model.
     Tried modeling using LeNet and Nvidia architecture. Nvidia gave better results than LeNet. Nvidia model was slightly modified to avoid overfitting. Below is model summary at each layer.
 
 ---------------------------------------------------------------------------------------------------
-Layer (type)                     Output Shape          Param #     Connected to                     
+Layer (type)                    |         Output Shape    |      Param #    | Connected to                     
 --------------------------------------------------------------------------------------------------------
-lambda_7 (Lambda)                (None, 66, 200, 3)    0           lambda_input_7[0][0]             
+lambda_7 (Lambda)                | (None, 66, 200, 3)     | 0           |lambda_input_7[0][0]             
 ____________________________________________________________________________________________________
-convolution2d_31 (Convolution2D) (None, 31, 98, 24)    1824        lambda_7[0][0]                   
+convolution2d_31 (Convolution2D) | (None, 31, 98, 24)    | 1824        |lambda_7[0][0]                   
 ____________________________________________________________________________________________________
-convolution2d_32 (Convolution2D) (None, 14, 47, 36)    21636       convolution2d_31[0][0]           
+convolution2d_32 (Convolution2D) | (None, 14, 47, 36)    | 21636       |convolution2d_31[0][0]           
 ____________________________________________________________________________________________________
-convolution2d_33 (Convolution2D) (None, 5, 22, 48)     43248       convolution2d_32[0][0]           
+convolution2d_33 (Convolution2D) | (None, 5, 22, 48)     | 43248       |convolution2d_32[0][0]           
 ____________________________________________________________________________________________________
-convolution2d_34 (Convolution2D) (None, 3, 20, 64)     27712       convolution2d_33[0][0]           
+convolution2d_34 (Convolution2D) | (None, 3, 20, 64)     | 27712       |convolution2d_33[0][0]           
 ____________________________________________________________________________________________________
-convolution2d_35 (Convolution2D) (None, 1, 18, 64)     36928       convolution2d_34[0][0]           
+convolution2d_35 (Convolution2D) | (None, 1, 18, 64)     | 36928       |convolution2d_34[0][0]           
 ____________________________________________________________________________________________________
-flatten_7 (Flatten)              (None, 1152)          0           convolution2d_35[0][0]           
+flatten_7 (Flatten)              | (None, 1152)          | 0           |convolution2d_35[0][0]           
 ____________________________________________________________________________________________________
-dense_31 (Dense)                 (None, 1164)          1342092     flatten_7[0][0]                  
+dense_31 (Dense)                 | (None, 1164)          | 1342092     |flatten_7[0][0]                  
 ____________________________________________________________________________________________________
-dropout_13 (Dropout)             (None, 1164)          0           dense_31[0][0]                   
+dropout_13 (Dropout)             |(None, 1164)         | 0           | dense_31[0][0]                   
 ____________________________________________________________________________________________________
-dense_32 (Dense)                 (None, 100)           116500      dropout_13[0][0]                 
+dense_32 (Dense)                 | (None, 100)         |  116500      | dropout_13[0][0]                 
 ____________________________________________________________________________________________________
-dropout_14 (Dropout)             (None, 100)           0           dense_32[0][0]                   
+dropout_14 (Dropout)             | (None, 100)         |  0           | dense_32[0][0]                   
 ____________________________________________________________________________________________________
-dense_33 (Dense)                 (None, 50)            5050        dropout_14[0][0]                 
+dense_33 (Dense)                 | (None, 50)          |  5050        | dropout_14[0][0]                 
 ____________________________________________________________________________________________________
-dropout_15 (Dropout)             (None, 50)            0           dense_33[0][0]                   
+dropout_15 (Dropout)             | (None, 50)          |  0           | dense_33[0][0]                   
 ____________________________________________________________________________________________________
-dense_34 (Dense)                 (None, 10)            510         dropout_15[0][0]                 
+dense_34 (Dense)                 | (None, 10)          |  510         | dropout_15[0][0]                 
 ____________________________________________________________________________________________________
-dense_35 (Dense)                 (None, 1)             11          dense_34[0][0]                   
-----
+dense_35 (Dense)                 |(None, 1)           |  11          | dense_34[0][0]                   
+---------------------------------------------------------------------------------------------------------
 Total params: 1,595,511
 Trainable params: 1,595,511
-----
+---------------------------------------------------------------------------------------------------------
 
 Model was modified as below
 - Lambda layer added in the front for Normalizing the image
