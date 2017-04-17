@@ -17,6 +17,9 @@ The goals / steps of this project are the following:
 [image1]: before_bias_removal.png "Data Distribution - before removing bias around ZERO steering angle"
 [image2]: after_bias_removal.png  "Data Distribution - after removing bias around ZERO steering angle"
 [image3]: nvidia.jpg "Architecture"
+[image4]: image.png "Preprocessed Images"
+[image5]: image_flip.png "Preprocessed Flip Images"
+[image6]: image_tran.png "Preprocessed Translated Imaged"
 
 ---
 ### Files Submitted & Code Quality
@@ -36,7 +39,8 @@ Project includes the following files:
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing
 
 ```
-docker run -it --rm -p 4567:4567 -v 'pwd':/src udacity/carnd-term1-starter-kit python drive.py model.json
+cd <directory where model.json, model.h5 and drive.py present in same directory>
+python drive.py model.json
 ```
 
 #### 3. Submission code is usable and readable
@@ -50,6 +54,21 @@ There are three primary functions written
 - **preprocess** - function primarily to cropping, reshaping, smoothing and color channel adjustment.
 
 These functions are called in pre-processing step before training the model.
+
+Images after apply preprocesing, flipping and image translation
+
+**Preprocessed Images**
+
+![Preprocessed Images][image4]
+
+**Flipped Images**
+
+![Preprocessed Flipped Images][image5]
+
+
+**Translated Imaged**
+
+![Preprocessed Translated Images][image6]
 
 ---
 
